@@ -1,0 +1,27 @@
+{
+  "name": "desafio-outsera",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "test:e2e": "tap run src/app.e2e.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "fastify": "^5.1.0",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "tap": "^21.0.1",
+    "tsx": "^4.19.2",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0"
+  }
+}
