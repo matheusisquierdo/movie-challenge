@@ -31,7 +31,7 @@ export class ProducerService {
         return producerEntity;
      }
 
-    async getAllMovies(): Promise<ProducerEntity[] | undefined> {
+    async getAll(): Promise<ProducerEntity[] | undefined> {
        return this.producerRepo.find();
     }
 

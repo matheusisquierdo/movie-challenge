@@ -27,30 +27,14 @@ export const buildServer = async () => {
 
     const app = fastity()
  
-    app.get("/",  async () : Promise<ProducersMinMaxWinnerReponseDto> => {
+    app.get("/winners/summaries",  async () : Promise<ProducersMinMaxWinnerReponseDto> => {
         return producerService.getMaxMinWinners();
     })
 
-    app.get("/producers",  async () : Promise<any[]> => {
-        const listWinners = await producerService.getAllWithMoreOne();
-
-        if(!listWinners || listWinners.length === 0) {
-            return [];
-        }
-
-        const reponseObj = listWinners.map((producer) => {
-            return {previousWin : producer.minYear, followingWin: producer.maxYear, producer: producer.producer, interval: producer.maxYear - producer.minYear};
-         });
-
-         return reponseObj;
-    })
-
-    app.get("/producers-winners",  async () : Promise<any[] | undefined> => {
-        const listWinners = await producerService.getWinners();
-
+    app.get("/winners",  async () : Promise<any[]> => {
+        const listWinners = await producerService.getAll();
          return listWinners;
-    })
-
+    });
 
     await app.listen({port: 3333})
     

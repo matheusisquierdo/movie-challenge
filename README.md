@@ -31,12 +31,12 @@ Após a aplicação exibir a mensagem abaixo, indica-se que ela foi inicializada
 Server is running on port 3333
 ```
 
-### Endpoint
+### Endpoints
 
 Para verificar os vencedores de prêmios consecutivos em menor intervalo e em maior, você poderá acessar a seguinte url:
 
 ```
-http://localhost:3333
+http://localhost:3333/winners/summaries
 ```
 
 ### Testes integrados
