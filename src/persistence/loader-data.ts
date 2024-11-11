@@ -18,7 +18,7 @@ export const loaderData = async (movieSrv: MovieService, producerSrv : ProducerS
 
     const array = {};
 
-    Promise.all(jsonArray.map(async (element: any) => {
+    Promise.all(jsonArray.sort((a, b) => a.year-b.year).map(async (element: any) => {
         if(element.winner == "yes") {
             element.producers.map((strProducer: string) => { 
 
