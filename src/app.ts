@@ -6,6 +6,7 @@ import { MovieService } from "./services/movie.service";
 import { loaderData } from "./persistence/loader-data";
 import { ProducerService } from "./services/producer.service";
 import { ProducersMinMaxWinnerReponseDto } from "./dto/producer-max-min-winner-reponse.dto";
+import { MovieEntity } from "./entities/movie.entity";
 
 
 export const buildServer = async () => {
@@ -30,6 +31,10 @@ export const buildServer = async () => {
     app.get("/winners/summaries",  async () : Promise<ProducersMinMaxWinnerReponseDto> => {
         return producerService.getMaxMinWinners();
     })
+
+    app.get("/movies",  async () : Promise<MovieEntity[]> => {
+        return movieService.getAllMovies();         
+    });
 
     app.get("/winners",  async () : Promise<any[]> => {
         const listWinners = await producerService.getAll();

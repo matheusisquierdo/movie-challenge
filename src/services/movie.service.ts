@@ -16,7 +16,7 @@ export class MovieService {
     
 
 
-    async getAllMovies(): Promise<MovieEntity[] | undefined> {
+    async getAllMovies(): Promise<MovieEntity[]> {
        return this.movieRepository.find();
     }
 

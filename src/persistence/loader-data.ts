@@ -58,14 +58,9 @@ export const loaderData = async (movieSrv: MovieService, producerSrv : ProducerS
     Object.values(array).map(async (value) => {
         await producerSrv.create(value);
     });
-
-    console.log(jsonArray);
+    
 }
 
 const splitByCommaSpaceOrWordAnd = (input: string) => {
     return input.split(/, | and /);
 };
-
-// Example usage
-const exampleString = "producer1, producer2 and producer3";
-console.log(splitByCommaSpaceOrWordAnd(exampleString)); // ["producer1", "producer2", "producer3"]
